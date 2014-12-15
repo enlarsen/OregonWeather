@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3CE17671A3F77ED00AB3EAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17661A3F77ED00AB3EAF /* AppDelegate.m */; };
+		B3CE17691A3F77ED00AB3EAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17681A3F77ED00AB3EAF /* main.m */; };
+		B3CE176B1A3F77ED00AB3EAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */; };
+		B3CE176E1A3F77ED00AB3EAF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CE176C1A3F77ED00AB3EAF /* MainMenu.xib */; };
+		B3CE177A1A3F77ED00AB3EAF /* OregonWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17791A3F77ED00AB3EAF /* OregonWeatherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3CE17741A3F77ED00AB3EAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3CE17581A3F77EC00AB3EAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3CE175F1A3F77ED00AB3EAF;
+			remoteInfo = OregonWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B3CE17601A3F77ED00AB3EAF /* OregonWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OregonWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3CE17641A3F77ED00AB3EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3CE17651A3F77ED00AB3EAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B3CE17661A3F77ED00AB3EAF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B3CE17681A3F77ED00AB3EAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B3CE176D1A3F77ED00AB3EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B3CE17731A3F77ED00AB3EAF /* OregonWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OregonWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3CE17781A3F77ED00AB3EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3CE17791A3F77ED00AB3EAF /* OregonWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OregonWeatherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3CE175D1A3F77ED00AB3EAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3CE17701A3F77ED00AB3EAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3CE17571A3F77EC00AB3EAF = {
+			isa = PBXGroup;
+			children = (
+				B3CE17621A3F77ED00AB3EAF /* OregonWeather */,
+				B3CE17761A3F77ED00AB3EAF /* OregonWeatherTests */,
+				B3CE17611A3F77ED00AB3EAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3CE17611A3F77ED00AB3EAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3CE17601A3F77ED00AB3EAF /* OregonWeather.app */,
+				B3CE17731A3F77ED00AB3EAF /* OregonWeatherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3CE17621A3F77ED00AB3EAF /* OregonWeather */ = {
+			isa = PBXGroup;
+			children = (
+				B3CE17651A3F77ED00AB3EAF /* AppDelegate.h */,
+				B3CE17661A3F77ED00AB3EAF /* AppDelegate.m */,
+				B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */,
+				B3CE176C1A3F77ED00AB3EAF /* MainMenu.xib */,
+				B3CE17631A3F77ED00AB3EAF /* Supporting Files */,
+			);
+			path = OregonWeather;
+			sourceTree = "<group>";
+		};
+		B3CE17631A3F77ED00AB3EAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3CE17641A3F77ED00AB3EAF /* Info.plist */,
+				B3CE17681A3F77ED00AB3EAF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3CE17761A3F77ED00AB3EAF /* OregonWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3CE17791A3F77ED00AB3EAF /* OregonWeatherTests.m */,
+				B3CE17771A3F77ED00AB3EAF /* Supporting Files */,
+			);
+			path = OregonWeatherTests;
+			sourceTree = "<group>";
+		};
+		B3CE17771A3F77ED00AB3EAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3CE17781A3F77ED00AB3EAF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3CE175F1A3F77ED00AB3EAF /* OregonWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3CE177D1A3F77ED00AB3EAF /* Build configuration list for PBXNativeTarget "OregonWeather" */;
+			buildPhases = (
+				B3CE175C1A3F77ED00AB3EAF /* Sources */,
+				B3CE175D1A3F77ED00AB3EAF /* Frameworks */,
+				B3CE175E1A3F77ED00AB3EAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OregonWeather;
+			productName = OregonWeather;
+			productReference = B3CE17601A3F77ED00AB3EAF /* OregonWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3CE17721A3F77ED00AB3EAF /* OregonWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3CE17801A3F77ED00AB3EAF /* Build configuration list for PBXNativeTarget "OregonWeatherTests" */;
+			buildPhases = (
+				B3CE176F1A3F77ED00AB3EAF /* Sources */,
+				B3CE17701A3F77ED00AB3EAF /* Frameworks */,
+				B3CE17711A3F77ED00AB3EAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3CE17751A3F77ED00AB3EAF /* PBXTargetDependency */,
+			);
+			name = OregonWeatherTests;
+			productName = OregonWeatherTests;
+			productReference = B3CE17731A3F77ED00AB3EAF /* OregonWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3CE17581A3F77EC00AB3EAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Erik Larsen";
+				TargetAttributes = {
+					B3CE175F1A3F77ED00AB3EAF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					B3CE17721A3F77ED00AB3EAF = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = B3CE175F1A3F77ED00AB3EAF;
+					};
+				};
+			};
+			buildConfigurationList = B3CE175B1A3F77EC00AB3EAF /* Build configuration list for PBXProject "OregonWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3CE17571A3F77EC00AB3EAF;
+			productRefGroup = B3CE17611A3F77ED00AB3EAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3CE175F1A3F77ED00AB3EAF /* OregonWeather */,
+				B3CE17721A3F77ED00AB3EAF /* OregonWeatherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3CE175E1A3F77ED00AB3EAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3CE176B1A3F77ED00AB3EAF /* Images.xcassets in Resources */,
+				B3CE176E1A3F77ED00AB3EAF /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3CE17711A3F77ED00AB3EAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3CE175C1A3F77ED00AB3EAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3CE17691A3F77ED00AB3EAF /* main.m in Sources */,
+				B3CE17671A3F77ED00AB3EAF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3CE176F1A3F77ED00AB3EAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3CE177A1A3F77ED00AB3EAF /* OregonWeatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3CE17751A3F77ED00AB3EAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3CE175F1A3F77ED00AB3EAF /* OregonWeather */;
+			targetProxy = B3CE17741A3F77ED00AB3EAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3CE176C1A3F77ED00AB3EAF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3CE176D1A3F77ED00AB3EAF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3CE177B1A3F77ED00AB3EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B3CE177C1A3F77ED00AB3EAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B3CE177E1A3F77ED00AB3EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OregonWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3CE177F1A3F77ED00AB3EAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OregonWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B3CE17811A3F77ED00AB3EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OregonWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OregonWeather.app/Contents/MacOS/OregonWeather";
+			};
+			name = Debug;
+		};
+		B3CE17821A3F77ED00AB3EAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OregonWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OregonWeather.app/Contents/MacOS/OregonWeather";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3CE175B1A3F77EC00AB3EAF /* Build configuration list for PBXProject "OregonWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3CE177B1A3F77ED00AB3EAF /* Debug */,
+				B3CE177C1A3F77ED00AB3EAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3CE177D1A3F77ED00AB3EAF /* Build configuration list for PBXNativeTarget "OregonWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3CE177E1A3F77ED00AB3EAF /* Debug */,
+				B3CE177F1A3F77ED00AB3EAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3CE17801A3F77ED00AB3EAF /* Build configuration list for PBXNativeTarget "OregonWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3CE17811A3F77ED00AB3EAF /* Debug */,
+				B3CE17821A3F77ED00AB3EAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3CE17581A3F77EC00AB3EAF /* Project object */;
+}
