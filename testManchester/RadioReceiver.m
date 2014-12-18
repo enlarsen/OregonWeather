@@ -12,7 +12,7 @@
 // handle non-rational decimation. I'm decimating by 4 and 10.
 static const NSUInteger inputBufferSize = 3200;
 static const NSUInteger sampleRate = 1024000;
-static const UInt32 frequency = 433000000;
+static const UInt32 frequency = 433920000;
 
 @interface RadioReceiver()
 
@@ -22,6 +22,7 @@ static const UInt32 frequency = 433000000;
 @property (strong, nonatomic) RTSDecimator *firstDecimator;
 @property (strong, nonatomic) RTSDecimator *finalDecimator;
 @property (strong, nonatomic) RTSAudioOutput *audioOutput;
+@property (strong, nonatomic) RTSMultiplyAdder *multiplyAdder;
 
 @end
 
@@ -91,6 +92,15 @@ static const UInt32 frequency = 433000000;
     return _audioOutput;
 }
 
+- (RTSMultiplyAdder *)multiplyAdder
+{
+    if(!_multiplyAdder)
+    {
+        _multiplyAdder = [[RTSMultiplyAdder alloc] initWithMultiplyFactor:-1.0 adder:500.0];
+    }
+    return _multiplyAdder;
+}
+
 - (void)start
 {
     [self.radio start];
@@ -102,11 +112,12 @@ static const UInt32 frequency = 433000000;
     RTSComplexVector *firstDecimated = [self.firstDecimator decimateComplex:conditioned];
     RTSFloatVector *demodulated = [self.demodulator demodulate:firstDecimated];
     RTSFloatVector *finalDecimated = [self.finalDecimator decimateFloat:demodulated];
+    RTSFloatVector *scaled = [self.multiplyAdder multiplyAdd:finalDecimated];
 
-    [self.audioOutput playSoundBuffer:finalDecimated];
+    [self.audioOutput playSoundBuffer:scaled];
 
 
-    [finalDecimated writeData:@"/Users/erikla/desktop/test.txt"];
+//    [scaled writeData:@"/Users/erikla/desktop/test12172014.txt"];
 }
 
 @end
