@@ -24,6 +24,7 @@ static const UInt32 frequency = 433920000;
 @property (strong, nonatomic) RTSAudioOutput *audioOutput;
 @property (strong, nonatomic) RTSMultiplyAdder *multiplyAdder;
 
+@property (strong, nonatomic) ManchesterDecoder *manchesterDecoder;
 @end
 
 @implementation RadioReceiver
@@ -101,6 +102,16 @@ static const UInt32 frequency = 433920000;
     return _multiplyAdder;
 }
 
+- (ManchesterDecoder *)manchesterDecoder
+{
+    if(!_manchesterDecoder)
+    {
+        _manchesterDecoder = [[ManchesterDecoder alloc] initWithSampleRate:32000.0 amplitudeFloor:2000000];
+        _manchesterDecoder.dataReceivedDelegate = self;
+    }
+    return _manchesterDecoder;
+}
+
 - (void)start
 {
     [self.radio start];
@@ -114,10 +125,22 @@ static const UInt32 frequency = 433920000;
     RTSFloatVector *finalDecimated = [self.finalDecimator decimateFloat:demodulated];
     RTSFloatVector *scaled = [self.multiplyAdder multiplyAdd:finalDecimated];
 
+    [self.manchesterDecoder decode:finalDecimated];
+
     [self.audioOutput playSoundBuffer:scaled];
 
 
-//    [scaled writeData:@"/Users/erikla/desktop/test12172014.txt"];
+    [finalDecimated writeData:@"/Users/erikla/desktop/test12192014.txt"];
+}
+
+- (void)decodedManchesterDataReceived:(NSMutableData *)input
+{
+    NSLog(@"Decoded manchester data! Length: %lu", (unsigned long)input.length);
+    for(int i = 0; i < input.length; i++)
+    {
+        fprintf(stderr, "%02x ", ((uint8 *)[input mutableBytes])[i]);
+    }
+    fprintf(stderr, "\n");
 }
 
 @end
