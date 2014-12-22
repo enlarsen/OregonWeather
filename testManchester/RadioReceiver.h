@@ -3,7 +3,7 @@
 //  OregonWeather
 //
 //  Created by Erik Larsen on 12/15/14.
-//  Copyright (c) 2014 Erik Larsen. All rights reserved.
+//  Copyright (c) 2014 Erik Larsen.
 //
 
 #import <Foundation/Foundation.h>

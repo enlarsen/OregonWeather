@@ -2,7 +2,7 @@
 //  ManchesterDecoder.h
 //
 //  Created by Erik Larsen on 12/18/14.
-//  Copyright (c) 2014 Erik Larsen. All rights reserved.
+//  Copyright (c) 2014 Erik Larsen.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
