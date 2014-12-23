@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,8 +11,9 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="radio" destination="5PX-Yf-GcI" id="RbF-IY-AK5"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -666,15 +667,205 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="OregonWeather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Weather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="contentRect" x="335" y="390" width="651" height="293"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="5" width="651" height="293"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Temperature" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-db-4gq">
+                        <rect key="frame" x="17" y="134" width="177" height="114"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="175" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGR-jb-xVP">
+                                    <rect key="frame" x="16" y="30" width="143" height="42"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="1r5-n3-cJx">
+                                        <font key="font" metaFont="system" size="35"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="5PX-Yf-GcI" name="value" keyPath="temperatureChannel1" id="krL-m2-SRU">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">--</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="fillColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-yH-yML">
+                        <rect key="frame" x="292" y="256" width="67" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel 2" id="Zu9-Og-ta5">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hex-Xs-MUX">
+                        <rect key="frame" x="512" y="256" width="67" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel 3" id="r1g-qR-lf4">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Temperature" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="jCF-KF-1d8">
+                        <rect key="frame" x="240" y="134" width="177" height="114"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="175" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-ie-k8L">
+                                    <rect key="frame" x="16" y="30" width="143" height="42"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="2Av-R4-Ix8">
+                                        <font key="font" metaFont="system" size="35"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="5PX-Yf-GcI" name="value" keyPath="temperatureChannel2" id="UbJ-3o-hcm">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">--</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Temperature" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lWK-Ja-POc">
+                        <rect key="frame" x="457" y="134" width="177" height="114"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="175" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-xM-43D">
+                                    <rect key="frame" x="16" y="30" width="143" height="42"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="81c-JX-KXY">
+                                        <font key="font" metaFont="system" size="35"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="5PX-Yf-GcI" name="value" keyPath="temperatureChannel3" id="0vc-Xj-swY">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">--</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Humidity" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="40r-Yf-D7R">
+                        <rect key="frame" x="17" y="16" width="177" height="114"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="175" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-cD-Cvl">
+                                    <rect key="frame" x="16" y="30" width="143" height="42"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="vjK-XS-3bu">
+                                        <font key="font" metaFont="system" size="35"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="5PX-Yf-GcI" name="value" keyPath="humidityChannel1" id="vOv-I6-HH8">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">--</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Humidity" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="KCT-uF-B1M">
+                        <rect key="frame" x="240" y="16" width="177" height="114"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="175" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XIh-5d-gmg">
+                                    <rect key="frame" x="16" y="30" width="143" height="42"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="yuV-07-yWJ">
+                                        <font key="font" metaFont="system" size="35"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="5PX-Yf-GcI" name="value" keyPath="humidityChannel2" id="uLA-UI-Wt9">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">--</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Humidity" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="5aF-6x-2rl">
+                        <rect key="frame" x="457" y="16" width="177" height="114"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="175" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-Wr-rqa">
+                                    <rect key="frame" x="16" y="30" width="143" height="42"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="4s5-Ut-OoS">
+                                        <font key="font" metaFont="system" size="35"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="5PX-Yf-GcI" name="value" keyPath="humidityChannel3" id="RcX-Kk-xKW">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">--</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vq9-03-a3L">
+                        <rect key="frame" x="72" y="256" width="67" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel 1" id="0FM-w2-GXf">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
             </view>
+            <point key="canvasLocation" x="311.5" y="428.5"/>
         </window>
+        <customObject id="5PX-Yf-GcI" customClass="RadioReceiver"/>
+        <customObject id="bS1-gx-KuL" userLabel="Manchester Decoder" customClass="ManchesterDecoder">
+            <connections>
+                <outlet property="dataReceivedDelegate" destination="5PX-Yf-GcI" id="8cK-p4-AKh"/>
+            </connections>
+        </customObject>
+        <userDefaultsController representsSharedInstance="YES" id="ASO-4l-bt9"/>
     </objects>
 </document>

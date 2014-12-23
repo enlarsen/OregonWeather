@@ -26,6 +26,6 @@
 - (instancetype)initWithSampleRate:(float)sampleRate amplitudeFloor:(float)amplitudeFloor;
 - (void)decode:(RTSFloatVector *)input;
 
-@property (nonatomic, weak) id<ManchesterDataReceived> dataReceivedDelegate;
+@property (nonatomic, weak) IBOutlet id<ManchesterDataReceived> dataReceivedDelegate;
 
 @end

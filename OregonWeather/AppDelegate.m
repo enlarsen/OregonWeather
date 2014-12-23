@@ -17,7 +17,10 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    if(self.radio)
+    {
+        [self.radio start];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

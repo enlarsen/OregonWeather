@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B31AFA021A44BD08008C664D /* ManchesterDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B31AFA011A44BD08008C664D /* ManchesterDecoder.m */; };
+		B33005221A48DDB000FDC026 /* ManchesterDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B31AFA011A44BD08008C664D /* ManchesterDecoder.m */; };
+		B33005231A48DDB800FDC026 /* RadioReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */; };
+		B33005241A48DE2B00FDC026 /* RadioTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE17D81A3F788200AB3EAF /* RadioTools.framework */; };
 		B3CE17671A3F77ED00AB3EAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17661A3F77ED00AB3EAF /* AppDelegate.m */; };
 		B3CE17691A3F77ED00AB3EAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17681A3F77ED00AB3EAF /* main.m */; };
 		B3CE176B1A3F77ED00AB3EAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */; };
@@ -62,9 +65,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B31AFA001A44BD08008C664D /* ManchesterDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManchesterDecoder.h; sourceTree = "<group>"; };
-		B31AFA011A44BD08008C664D /* ManchesterDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManchesterDecoder.m; sourceTree = "<group>"; };
-		B31AFA041A44C733008C664D /* ManchesterDataReceived.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManchesterDataReceived.h; sourceTree = "<group>"; };
+		B31AFA001A44BD08008C664D /* ManchesterDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManchesterDecoder.h; path = ../testManchester/ManchesterDecoder.h; sourceTree = "<group>"; };
+		B31AFA011A44BD08008C664D /* ManchesterDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManchesterDecoder.m; path = ../testManchester/ManchesterDecoder.m; sourceTree = "<group>"; };
+		B31AFA041A44C733008C664D /* ManchesterDataReceived.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManchesterDataReceived.h; path = ../testManchester/ManchesterDataReceived.h; sourceTree = "<group>"; };
 		B3CE17601A3F77ED00AB3EAF /* OregonWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OregonWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CE17641A3F77ED00AB3EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3CE17651A3F77ED00AB3EAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,8 +81,8 @@
 		B3CE17D21A3F788200AB3EAF /* RadioTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RadioTools.xcodeproj; path = ../RadioTools/RadioTools.xcodeproj; sourceTree = "<group>"; };
 		B3CE17DF1A3F7C2E00AB3EAF /* testManchester */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testManchester; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CE17E11A3F7C2E00AB3EAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B3CE17E81A3F7E2200AB3EAF /* RadioReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioReceiver.h; sourceTree = "<group>"; };
-		B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioReceiver.m; sourceTree = "<group>"; };
+		B3CE17E81A3F7E2200AB3EAF /* RadioReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioReceiver.h; path = ../testManchester/RadioReceiver.h; sourceTree = "<group>"; };
+		B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioReceiver.m; path = ../testManchester/RadioReceiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33005241A48DE2B00FDC026 /* RadioTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +140,11 @@
 				B3CE17661A3F77ED00AB3EAF /* AppDelegate.m */,
 				B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */,
 				B3CE176C1A3F77ED00AB3EAF /* MainMenu.xib */,
+				B3CE17E81A3F7E2200AB3EAF /* RadioReceiver.h */,
+				B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */,
+				B31AFA001A44BD08008C664D /* ManchesterDecoder.h */,
+				B31AFA011A44BD08008C664D /* ManchesterDecoder.m */,
+				B31AFA041A44C733008C664D /* ManchesterDataReceived.h */,
 				B3CE17631A3F77ED00AB3EAF /* Supporting Files */,
 			);
 			path = OregonWeather;
@@ -180,11 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				B3CE17E11A3F7C2E00AB3EAF /* main.m */,
-				B3CE17E81A3F7E2200AB3EAF /* RadioReceiver.h */,
-				B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */,
-				B31AFA001A44BD08008C664D /* ManchesterDecoder.h */,
-				B31AFA011A44BD08008C664D /* ManchesterDecoder.m */,
-				B31AFA041A44C733008C664D /* ManchesterDataReceived.h */,
 			);
 			path = testManchester;
 			sourceTree = "<group>";
@@ -334,6 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CE17691A3F77ED00AB3EAF /* main.m in Sources */,
+				B33005221A48DDB000FDC026 /* ManchesterDecoder.m in Sources */,
+				B33005231A48DDB800FDC026 /* RadioReceiver.m in Sources */,
 				B3CE17671A3F77ED00AB3EAF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
