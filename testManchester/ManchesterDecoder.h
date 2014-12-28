@@ -23,7 +23,7 @@
 
 @interface ManchesterDecoder : NSObject
 
-- (instancetype)initWithSampleRate:(float)sampleRate amplitudeFloor:(float)amplitudeFloor;
+- (instancetype)initWithSampleRate:(float)sampleRate amplitudeFloor:(float)amplitudeFloor NS_DESIGNATED_INITIALIZER;
 - (void)decode:(RTSFloatVector *)input;
 
 @property (nonatomic, weak) IBOutlet id<ManchesterDataReceived> dataReceivedDelegate;

@@ -125,7 +125,7 @@ static const UInt32 frequency = 433920000;
     RTSComplexVector *firstDecimated = [self.firstDecimator decimateComplex:conditioned];
     RTSFloatVector *demodulated = [self.demodulator demodulate:firstDecimated];
     RTSFloatVector *finalDecimated = [self.finalDecimator decimateFloat:demodulated];
-    RTSFloatVector *scaled = [self.multiplyAdder multiplyAdd:finalDecimated];
+//    RTSFloatVector *scaled = [self.multiplyAdder multiplyAdd:finalDecimated];
 
     [self.manchesterDecoder decode:finalDecimated];
 
@@ -179,6 +179,12 @@ static const UInt32 frequency = 433920000;
     NSArray *message1 = nibbles[0];
     NSArray *message2 = nibbles[1];
 
+    if(message2.count < 14)
+    {
+        NSLog(@"Messages too short: %ld", message1.count);
+        return;
+    }
+
     if([message2[0] isEqualToNumber:@0x1] && [message2[1] isEqualToNumber:@0xd] &&
        [message2[2] isEqualToNumber:@0x2] && [message2[3] isEqualToNumber:@0x0])
     {
@@ -186,11 +192,7 @@ static const UInt32 frequency = 433920000;
         // between messages so we're somewhat sure the data is correct.
 
         int nibbleErrors = 0;
-        if(message1.count < 14 || message2.count < 14)
-        {
-            NSLog(@"Messages too short: %ld", message1.count);
-            return;
-        }
+
         for(int i = 0; i < 5; i++) // This is the sensor ID and the channel
         {
             if(message1[i] != message2[i])
@@ -307,6 +309,10 @@ static const UInt32 frequency = 433920000;
     }
     else
     {
+        if(message1.length != message2.length)
+        {
+            NSLog(@"Messages not the same length");
+        }
         return nil;
     }
 }
@@ -340,7 +346,7 @@ static const UInt32 frequency = 433920000;
         }
         if(lastBit1)
         {
-            [nibbles1 addObject:[NSNumber numberWithChar:(byte1 & 0x0f)]];
+            [nibbles1 addObject:[NSNumber numberWithInt:(byte1 & 0x0f)]];
             byte1 = 0x01;
         }
         if(lastBit2)

@@ -11,6 +11,7 @@
 		B33005221A48DDB000FDC026 /* ManchesterDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B31AFA011A44BD08008C664D /* ManchesterDecoder.m */; };
 		B33005231A48DDB800FDC026 /* RadioReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */; };
 		B33005241A48DE2B00FDC026 /* RadioTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE17D81A3F788200AB3EAF /* RadioTools.framework */; };
+		B370ED4F1A49020C000A480D /* RadioTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3CE17D81A3F788200AB3EAF /* RadioTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3CE17671A3F77ED00AB3EAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17661A3F77ED00AB3EAF /* AppDelegate.m */; };
 		B3CE17691A3F77ED00AB3EAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17681A3F77ED00AB3EAF /* main.m */; };
 		B3CE176B1A3F77ED00AB3EAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */; };
@@ -53,6 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B370ED4D1A4901FD000A480D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B370ED4F1A49020C000A480D /* RadioTools.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3CE17DD1A3F7C2E00AB3EAF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,6 +214,7 @@
 				B3CE175C1A3F77ED00AB3EAF /* Sources */,
 				B3CE175D1A3F77ED00AB3EAF /* Frameworks */,
 				B3CE175E1A3F77ED00AB3EAF /* Resources */,
+				B370ED4D1A4901FD000A480D /* CopyFiles */,
 			);
 			buildRules = (
 			);
