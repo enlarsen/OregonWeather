@@ -670,14 +670,14 @@
         <window title="Weather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="691" height="245"/>
+            <rect key="contentRect" x="335" y="390" width="691" height="265"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="691" height="245"/>
+                <rect key="frame" x="0.0" y="0.0" width="691" height="265"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vq9-03-a3L">
-                        <rect key="frame" x="87" y="208" width="67" height="17"/>
+                        <rect key="frame" x="87" y="228" width="67" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel 1" id="0FM-w2-GXf">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -685,7 +685,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-yH-yML">
-                        <rect key="frame" x="312" y="208" width="67" height="17"/>
+                        <rect key="frame" x="312" y="228" width="67" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel 2" id="Zu9-Og-ta5">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -693,7 +693,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hex-Xs-MUX">
-                        <rect key="frame" x="537" y="208" width="67" height="17"/>
+                        <rect key="frame" x="537" y="228" width="67" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel 3" id="r1g-qR-lf4">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -701,18 +701,18 @@
                         </textFieldCell>
                     </textField>
                     <box autoresizesSubviews="NO" title="Temperature" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-db-4gq" userLabel="Temperature 1">
-                        <rect key="frame" x="13" y="110" width="215" height="90"/>
+                        <rect key="frame" x="13" y="120" width="215" height="100"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="213" height="74"/>
+                            <rect key="frame" x="1" y="1" width="213" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="iGR-jb-xVP">
-                                    <rect key="frame" x="16" y="19" width="181" height="42"/>
+                                    <rect key="frame" x="16" y="19" width="181" height="52"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="177" id="fgl-FS-OAE"/>
                                     </constraints>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="1r5-n3-cJx">
-                                        <font key="font" metaFont="system" size="35"/>
+                                        <font key="font" metaFont="system" size="43"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -736,15 +736,15 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" title="Temperature" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="jCF-KF-1d8" userLabel="Temperature 2">
-                        <rect key="frame" x="238" y="110" width="215" height="90"/>
+                        <rect key="frame" x="238" y="120" width="215" height="100"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="213" height="74"/>
+                            <rect key="frame" x="1" y="1" width="213" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-ie-k8L">
-                                    <rect key="frame" x="16" y="19" width="181" height="42"/>
+                                    <rect key="frame" x="16" y="19" width="181" height="52"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="2Av-R4-Ix8">
-                                        <font key="font" metaFont="system" size="35"/>
+                                        <font key="font" metaFont="system" size="43"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -768,15 +768,15 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" title="Temperature" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lWK-Ja-POc" userLabel="Temperature 3">
-                        <rect key="frame" x="463" y="110" width="215" height="90"/>
+                        <rect key="frame" x="463" y="120" width="215" height="100"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="213" height="74"/>
+                            <rect key="frame" x="1" y="1" width="213" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-xM-43D">
-                                    <rect key="frame" x="16" y="19" width="181" height="42"/>
+                                    <rect key="frame" x="16" y="19" width="181" height="52"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="81c-JX-KXY">
-                                        <font key="font" metaFont="system" size="35"/>
+                                        <font key="font" metaFont="system" size="43"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -800,15 +800,15 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" title="Humidity" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="40r-Yf-D7R" userLabel="Humidity 1">
-                        <rect key="frame" x="13" y="16" width="215" height="90"/>
+                        <rect key="frame" x="13" y="16" width="215" height="100"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="213" height="74"/>
+                            <rect key="frame" x="1" y="1" width="213" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-cD-Cvl">
-                                    <rect key="frame" x="16" y="19" width="181" height="42"/>
+                                    <rect key="frame" x="16" y="19" width="181" height="52"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="vjK-XS-3bu">
-                                        <font key="font" metaFont="system" size="35"/>
+                                        <font key="font" metaFont="system" size="43"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -832,15 +832,15 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" title="Humidity" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="KCT-uF-B1M" userLabel="Humidity 2">
-                        <rect key="frame" x="238" y="16" width="215" height="90"/>
+                        <rect key="frame" x="238" y="16" width="215" height="100"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="213" height="74"/>
+                            <rect key="frame" x="1" y="1" width="213" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="XIh-5d-gmg">
-                                    <rect key="frame" x="16" y="19" width="181" height="42"/>
+                                    <rect key="frame" x="16" y="19" width="181" height="52"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="yuV-07-yWJ">
-                                        <font key="font" metaFont="system" size="35"/>
+                                        <font key="font" metaFont="system" size="43"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -864,15 +864,15 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" title="Humidity" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="5aF-6x-2rl" userLabel="Humidity 3">
-                        <rect key="frame" x="463" y="16" width="215" height="90"/>
+                        <rect key="frame" x="463" y="16" width="215" height="100"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="213" height="74"/>
+                            <rect key="frame" x="1" y="1" width="213" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-Wr-rqa">
-                                    <rect key="frame" x="16" y="19" width="181" height="42"/>
+                                    <rect key="frame" x="16" y="19" width="181" height="52"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="4s5-Ut-OoS">
-                                        <font key="font" metaFont="system" size="35"/>
+                                        <font key="font" metaFont="system" size="43"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>

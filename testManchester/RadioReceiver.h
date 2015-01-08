@@ -23,6 +23,7 @@
 @property (strong, nonatomic) NSString *humidityChannel2;
 @property (strong, nonatomic) NSString *humidityChannel3;
 
+
 @property (strong, nonatomic) ManchesterDecoder *manchesterDecoder;
 
 - (void)start;

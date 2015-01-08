@@ -79,6 +79,7 @@
 		B31AFA001A44BD08008C664D /* ManchesterDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManchesterDecoder.h; path = ../testManchester/ManchesterDecoder.h; sourceTree = "<group>"; };
 		B31AFA011A44BD08008C664D /* ManchesterDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManchesterDecoder.m; path = ../testManchester/ManchesterDecoder.m; sourceTree = "<group>"; };
 		B31AFA041A44C733008C664D /* ManchesterDataReceived.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManchesterDataReceived.h; path = ../testManchester/ManchesterDataReceived.h; sourceTree = "<group>"; };
+		B38161851A521D2B00262AAB /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		B3CE17601A3F77ED00AB3EAF /* OregonWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OregonWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CE17641A3F77ED00AB3EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3CE17651A3F77ED00AB3EAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		B3CE17571A3F77EC00AB3EAF = {
 			isa = PBXGroup;
 			children = (
+				B38161851A521D2B00262AAB /* readme.md */,
 				B3CE17621A3F77ED00AB3EAF /* OregonWeather */,
 				B3CE17761A3F77ED00AB3EAF /* OregonWeatherTests */,
 				B3CE17E01A3F7C2E00AB3EAF /* testManchester */,

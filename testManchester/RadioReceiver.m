@@ -10,9 +10,11 @@
 
 // Make this divisible by the decimators' factors because they can't
 // handle non-rational decimation. I'm decimating by 4 and 10.
-static const NSUInteger inputBufferSize = 3200;
+static const NSUInteger outputBufferSize = 320000;
 static const NSUInteger sampleRate = 1024000;
 static const UInt32 frequency = 433920000;
+
+static const NSTimeInterval staleReadoutInterval = 10.0f * 60.0f; // 10 minutes
 
 @interface RadioReceiver()
 
@@ -21,11 +23,12 @@ static const UInt32 frequency = 433920000;
 @property (strong, nonatomic) RTSAMDemodulator *demodulator;
 @property (strong, nonatomic) RTSDecimator *firstDecimator;
 @property (strong, nonatomic) RTSDecimator *finalDecimator;
-@property (strong, nonatomic) RTSAudioOutput *audioOutput;
-@property (strong, nonatomic) RTSMultiplyAdder *multiplyAdder;
 
+@property (strong, nonatomic) NSDate *lastTimeReceivedChannel1;
+@property (strong, nonatomic) NSDate *lastTimeReceivedChannel2;
+@property (strong, nonatomic) NSDate *lastTimeReceivedChannel3;
 
-@property (strong, nonatomic) NSMutableArray *sensors;
+@property (strong, nonatomic) NSTimer *watchDogTimer;
 
 @end
 
@@ -44,7 +47,10 @@ static const UInt32 frequency = 433920000;
 {
     if(!_radio)
     {
-        _radio = [[RTSRTLRadio alloc] initWithDelegate:self frequency:frequency sampleRate:sampleRate  outputBufferSize:inputBufferSize];
+        _radio = [[RTSRTLRadio alloc] initWithDelegate:self
+                                             frequency:frequency
+                                            sampleRate:sampleRate
+                                      outputBufferSize:outputBufferSize];
     }
     return _radio;
 
@@ -86,37 +92,43 @@ static const UInt32 frequency = 433920000;
     return _finalDecimator;
 }
 
-- (RTSAudioOutput *)audioOutput
-{
-    if(!_audioOutput)
-    {
-        _audioOutput = [[RTSAudioOutput alloc] initWithSampleRate:32000];
-    }
-    return _audioOutput;
-}
-
-- (RTSMultiplyAdder *)multiplyAdder
-{
-    if(!_multiplyAdder)
-    {
-        _multiplyAdder = [[RTSMultiplyAdder alloc] initWithMultiplyFactor:-1.0 adder:500.0];
-    }
-    return _multiplyAdder;
-}
-
 - (ManchesterDecoder *)manchesterDecoder
 {
     if(!_manchesterDecoder)
     {
-        _manchesterDecoder = [[ManchesterDecoder alloc] initWithSampleRate:32000.0 amplitudeFloor:2000000];
+        // Initial max amplitude (absolute value): 128
+        // After 4 decimation: 128 * 4 = 512
+        // After amplitude demodulation: 512**2 + 512**2 = 524288
+        // After by 10 decimation: 524288 * 10 = 5,242,880
+        // Use around half as the amplitude floor: 2,000,000
+        //
+        _manchesterDecoder = [[ManchesterDecoder alloc] initWithSampleRate:32000.0
+                                                            amplitudeFloor:2000000];
         _manchesterDecoder.dataReceivedDelegate = self;
+
+        dispatch_async(dispatch_get_main_queue(),
+        ^{
+            _watchDogTimer = [NSTimer scheduledTimerWithTimeInterval:5*60
+                                                          target:self
+                                                        selector:@selector(checkChannels:)
+                                                        userInfo:nil
+                                                         repeats:YES];
+        });
     }
     return _manchesterDecoder;
 }
 
 - (void)start
 {
-    [self.radio start];
+    if(self.radio)
+    {
+        [self.radio start];
+    }
+    else
+    {
+        NSLog(@"Could not connect to RTL radio, check device.");
+        exit(-1);
+    }
 }
 
 - (void)dataReceived:(NSMutableData *)dataQueue
@@ -125,14 +137,9 @@ static const UInt32 frequency = 433920000;
     RTSComplexVector *firstDecimated = [self.firstDecimator decimateComplex:conditioned];
     RTSFloatVector *demodulated = [self.demodulator demodulate:firstDecimated];
     RTSFloatVector *finalDecimated = [self.finalDecimator decimateFloat:demodulated];
-//    RTSFloatVector *scaled = [self.multiplyAdder multiplyAdd:finalDecimated];
 
     [self.manchesterDecoder decode:finalDecimated];
 
-//    [self.audioOutput playSoundBuffer:scaled];
-
-
-//    [finalDecimated writeData:@"/Users/erikla/desktop/test12192014.txt"];
 }
 
 - (void)decodedManchesterDataReceived:(NSMutableString *)input
@@ -170,8 +177,8 @@ static const UInt32 frequency = 433920000;
     }
 
     // Convert to real nibbles stored as NSNumbers.
-    // note that message1 has its bits flipped so if there are
-    // no bit errors, message1 == message2
+    // note that message1 was changed to its inverse so if there are
+    // no bit errors, message1 == message2 (unless both bits in a pair are corrupted)
 
     NSArray *nibbles = [self convertToNibbles:nibbleFlippedMessages[0]
                                      message2:nibbleFlippedMessages[1]];
@@ -195,7 +202,7 @@ static const UInt32 frequency = 433920000;
 
         for(int i = 0; i < 5; i++) // This is the sensor ID and the channel
         {
-            if(message1[i] != message2[i])
+            if([message1[i] integerValue] != [message2[i] integerValue])
             {
                 nibbleErrors++;
             }
@@ -203,7 +210,7 @@ static const UInt32 frequency = 433920000;
 
         for(int i = 8; i < 14; i++) // This is the temperature and humidity data
         {
-            if(message1[i] != message2[i])
+            if([message1[i] integerValue] != [message2[i] integerValue])
             {
                 nibbleErrors++;
             }
@@ -215,27 +222,34 @@ static const UInt32 frequency = 433920000;
             long channel = [message2[4] integerValue];
             NSLog(@"Channel: %@", message2[4]);
             float temperatureC = [message2[10] floatValue] * 10.0 + [message2[9] floatValue] + [message2[8] floatValue] / 10.0;
+            if([message2[11] integerValue] != 0)
+            {
+                temperatureC *= -1;
+            }
             float temperatureF = temperatureC * 1.8 + 32.0;
             NSLog(@"Temperature F: %f", temperatureF);
             long humidity = [message2[13] integerValue] * 10 + [message2[12] integerValue];
             NSLog(@"Humidity: %ld", humidity);
 
-            NSString *temperatureString = [NSString stringWithFormat:@"%.1f ℉", temperatureF];
+            NSString *temperatureString = [NSString stringWithFormat:@"%.1f℉", temperatureF];
             NSString *humidityString = [NSString stringWithFormat:@"%ld%%", humidity];
             if(channel == 1)
             {
                 self.temperatureChannel1 = temperatureString;
                 self.humidityChannel1 = humidityString;
+                self.lastTimeReceivedChannel1 = [NSDate date];
             }
             if(channel == 2)
             {
                 self.temperatureChannel2 = temperatureString;
                 self.humidityChannel2 = humidityString;
+                self.lastTimeReceivedChannel2 = [NSDate date];
             }
             if(channel == 4) // Channel 3
             {
                 self.temperatureChannel3 = temperatureString;
                 self.humidityChannel3 = humidityString;
+                self.lastTimeReceivedChannel3 = [NSDate date];
             }
 
 
@@ -333,7 +347,7 @@ static const UInt32 frequency = 433920000;
         BOOL lastBit2 = (byte2 & 0x08) == 0x08;
         byte1 <<= 1;
         byte2 <<= 1;
-        // Message1 is the inverse, so make the inverse here;
+        // Message1 is the inverse, so invert it;
         if([[message1 substringWithRange:NSMakeRange(i, 1)]
             isEqualToString: @"0"])
         {
@@ -356,6 +370,40 @@ static const UInt32 frequency = 433920000;
         }
     }
     return @[nibbles1, nibbles2];
+}
+
+- (void)checkChannels:(NSTimer *)timer
+{
+    NSLog(@"Checking channels' age");
+    NSLog(@"\tChannel 1 age: %f", [self.lastTimeReceivedChannel1 timeIntervalSinceNow]);
+    NSLog(@"\tChannel 2 age: %f", [self.lastTimeReceivedChannel2 timeIntervalSinceNow]);
+    NSLog(@"\tChannel 3 age: %f", [self.lastTimeReceivedChannel3 timeIntervalSinceNow]);
+
+    if(self.lastTimeReceivedChannel1 &&
+       fabs([self.lastTimeReceivedChannel1 timeIntervalSinceNow]) > staleReadoutInterval)
+    {
+        NSLog(@"Channel 1 too old: %@", self.lastTimeReceivedChannel1);
+        self.temperatureChannel1 = nil;
+        self.humidityChannel1 = nil;
+        self.lastTimeReceivedChannel1 = nil;
+    }
+    if(self.lastTimeReceivedChannel2 &&
+       fabs([self.lastTimeReceivedChannel2 timeIntervalSinceNow]) > staleReadoutInterval)
+    {
+        NSLog(@"Channel 2 too old: %@", self.lastTimeReceivedChannel2);
+        self.temperatureChannel2 = nil;
+        self.humidityChannel2 = nil;
+        self.lastTimeReceivedChannel2 = nil;
+    }
+    if(self.lastTimeReceivedChannel3 &&
+       fabs([self.lastTimeReceivedChannel3 timeIntervalSinceNow]) > staleReadoutInterval)
+    {
+        NSLog(@"Channel 3 too old: %@", self.lastTimeReceivedChannel3);
+        self.temperatureChannel3 = nil;
+        self.humidityChannel3 = nil;
+        self.lastTimeReceivedChannel3 = nil;
+    }
+
 }
 
 @end
