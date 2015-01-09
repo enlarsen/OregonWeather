@@ -73,6 +73,8 @@
 		B3CE17D21A3F788200AB3EAF /* RadioTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RadioTools.xcodeproj; path = ../RadioTools/RadioTools.xcodeproj; sourceTree = "<group>"; };
 		B3CE17E81A3F7E2200AB3EAF /* RadioReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioReceiver.h; sourceTree = "<group>"; };
 		B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioReceiver.m; sourceTree = "<group>"; };
+		B3EFBB0A1A6078CA0068C4FB /* OregonWeatherScreenshot1-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OregonWeatherScreenshot1-thumb.png"; sourceTree = "<group>"; };
+		B3EFBB0B1A6078CA0068C4FB /* OregonWeatherScreenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OregonWeatherScreenshot1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		B3CE17631A3F77ED00AB3EAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B3EFBB091A6078CA0068C4FB /* screenshots */,
 				B3CE17641A3F77ED00AB3EAF /* Info.plist */,
 				B3CE17681A3F77ED00AB3EAF /* main.m */,
 			);
@@ -164,6 +167,15 @@
 				B3CE17DA1A3F788200AB3EAF /* RadioToolsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3EFBB091A6078CA0068C4FB /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFBB0A1A6078CA0068C4FB /* OregonWeatherScreenshot1-thumb.png */,
+				B3EFBB0B1A6078CA0068C4FB /* OregonWeatherScreenshot1.png */,
+			);
+			path = screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

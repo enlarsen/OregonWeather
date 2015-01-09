@@ -25,4 +25,9 @@ brew install librtlsdr
 
 This will also install the libusb dependency.
 
+## Screenshot
+
+Screenshot of the app with two THGR122NX temperature/humidity sensors:
+
+[![image](https://raw.githubusercontent.com/enlarsen/OregonWeather/master/screenshots/OregonWeatherScreenshot1-thumb.png "Screenshot")](https://raw.githubusercontent.com/enlarsen/OregonWeather/master/screenshots/OregonWeatherScreenshot1.png)
 
