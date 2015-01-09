@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B31AFA021A44BD08008C664D /* ManchesterDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B31AFA011A44BD08008C664D /* ManchesterDecoder.m */; };
 		B33005221A48DDB000FDC026 /* ManchesterDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B31AFA011A44BD08008C664D /* ManchesterDecoder.m */; };
 		B33005231A48DDB800FDC026 /* RadioReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */; };
 		B33005241A48DE2B00FDC026 /* RadioTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE17D81A3F788200AB3EAF /* RadioTools.framework */; };
@@ -17,8 +16,6 @@
 		B3CE176B1A3F77ED00AB3EAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CE176A1A3F77ED00AB3EAF /* Images.xcassets */; };
 		B3CE176E1A3F77ED00AB3EAF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CE176C1A3F77ED00AB3EAF /* MainMenu.xib */; };
 		B3CE177A1A3F77ED00AB3EAF /* OregonWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17791A3F77ED00AB3EAF /* OregonWeatherTests.m */; };
-		B3CE17EA1A3F7E2200AB3EAF /* RadioReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */; };
-		B3CE17F01A3F8F1500AB3EAF /* RadioTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE17D81A3F788200AB3EAF /* RadioTools.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +40,6 @@
 			remoteGlobalIDString = B3D2850618563A5400A0C898;
 			remoteInfo = RadioToolsTests;
 		};
-		B3CE17E61A3F7CC900AB3EAF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3CE17D21A3F788200AB3EAF /* RadioTools.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B3D284EE18563A5300A0C898;
-			remoteInfo = RadioTools;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,15 +52,6 @@
 				B370ED4F1A49020C000A480D /* RadioTools.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3CE17DD1A3F7C2E00AB3EAF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -90,7 +71,6 @@
 		B3CE17781A3F77ED00AB3EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3CE17791A3F77ED00AB3EAF /* OregonWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OregonWeatherTests.m; sourceTree = "<group>"; };
 		B3CE17D21A3F788200AB3EAF /* RadioTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RadioTools.xcodeproj; path = ../RadioTools/RadioTools.xcodeproj; sourceTree = "<group>"; };
-		B3CE17DF1A3F7C2E00AB3EAF /* testManchester */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testManchester; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CE17E81A3F7E2200AB3EAF /* RadioReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioReceiver.h; sourceTree = "<group>"; };
 		B3CE17E91A3F7E2200AB3EAF /* RadioReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioReceiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,14 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3CE17DC1A3F7C2E00AB3EAF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3CE17F01A3F8F1500AB3EAF /* RadioTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +110,6 @@
 			children = (
 				B3CE17601A3F77ED00AB3EAF /* OregonWeather.app */,
 				B3CE17731A3F77ED00AB3EAF /* OregonWeatherTests.xctest */,
-				B3CE17DF1A3F7C2E00AB3EAF /* testManchester */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,24 +205,6 @@
 			productReference = B3CE17731A3F77ED00AB3EAF /* OregonWeatherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B3CE17DE1A3F7C2E00AB3EAF /* testManchester */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B3CE17E31A3F7C2F00AB3EAF /* Build configuration list for PBXNativeTarget "testManchester" */;
-			buildPhases = (
-				B3CE17DB1A3F7C2E00AB3EAF /* Sources */,
-				B3CE17DC1A3F7C2E00AB3EAF /* Frameworks */,
-				B3CE17DD1A3F7C2E00AB3EAF /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B3CE17E71A3F7CC900AB3EAF /* PBXTargetDependency */,
-			);
-			name = testManchester;
-			productName = testManchester;
-			productReference = B3CE17DF1A3F7C2E00AB3EAF /* testManchester */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -267,9 +220,6 @@
 					B3CE17721A3F77ED00AB3EAF = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = B3CE175F1A3F77ED00AB3EAF;
-					};
-					B3CE17DE1A3F7C2E00AB3EAF = {
-						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
@@ -294,7 +244,6 @@
 			targets = (
 				B3CE175F1A3F77ED00AB3EAF /* OregonWeather */,
 				B3CE17721A3F77ED00AB3EAF /* OregonWeatherTests */,
-				B3CE17DE1A3F7C2E00AB3EAF /* testManchester */,
 			);
 		};
 /* End PBXProject section */
@@ -355,15 +304,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3CE17DB1A3F7C2E00AB3EAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B31AFA021A44BD08008C664D /* ManchesterDecoder.m in Sources */,
-				B3CE17EA1A3F7E2200AB3EAF /* RadioReceiver.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -371,11 +311,6 @@
 			isa = PBXTargetDependency;
 			target = B3CE175F1A3F77ED00AB3EAF /* OregonWeather */;
 			targetProxy = B3CE17741A3F77ED00AB3EAF /* PBXContainerItemProxy */;
-		};
-		B3CE17E71A3F7CC900AB3EAF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RadioTools;
-			targetProxy = B3CE17E61A3F7CC900AB3EAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,24 +460,6 @@
 			};
 			name = Release;
 		};
-		B3CE17E41A3F7C2F00AB3EAF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		B3CE17E51A3F7C2F00AB3EAF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,15 +486,6 @@
 			buildConfigurations = (
 				B3CE17811A3F77ED00AB3EAF /* Debug */,
 				B3CE17821A3F77ED00AB3EAF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B3CE17E31A3F7C2F00AB3EAF /* Build configuration list for PBXNativeTarget "testManchester" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B3CE17E41A3F7C2F00AB3EAF /* Debug */,
-				B3CE17E51A3F7C2F00AB3EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
