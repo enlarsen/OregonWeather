@@ -34,6 +34,7 @@ static const NSTimeInterval staleReadoutInterval = 10.0f * 60.0f; // 10 minutes
 
 @implementation RadioReceiver
 
+
 - (dispatch_queue_t)dataDispatchQueue
 {
     if(!_dataDispatchQueue)
@@ -192,8 +193,9 @@ static const NSTimeInterval staleReadoutInterval = 10.0f * 60.0f; // 10 minutes
         return;
     }
 
-    if([message2[0] isEqualToNumber:@0x1] && [message2[1] isEqualToNumber:@0xd] &&
-       [message2[2] isEqualToNumber:@0x2] && [message2[3] isEqualToNumber:@0x0])
+//    if([message2[0] isEqualToNumber:@0x1] && [message2[1] isEqualToNumber:@0xd] &&
+//       [message2[2] isEqualToNumber:@0x2] && [message2[3] isEqualToNumber:@0x0])
+    if([self isKnownSensor:message2])
     {
         // Check whether various nibbles we care about are equal
         // between messages so we're somewhat sure the data is correct.
@@ -403,6 +405,40 @@ static const NSTimeInterval staleReadoutInterval = 10.0f * 60.0f; // 10 minutes
         self.humidityChannel3 = nil;
         self.lastTimeReceivedChannel3 = nil;
     }
+
+}
+
+- (BOOL)isKnownSensor:(NSArray *)sensorNibbles
+{
+    for(NSArray *signature in [RadioReceiver knownSensorSignatures])
+    {
+        if([self doesSignature:sensorNibbles match:signature])
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)doesSignature:(NSArray *)signature1 match:(NSArray *)signature2
+{
+    for(int i = 0; i < 3; i++)
+    {
+        if(![signature1[i] isEqualToNumber:signature2[i]])
+        {
+            return NO;
+        }
+    }
+    return YES;
+
+}
+
+
++ (NSArray *)knownSensorSignatures
+{
+    return @[ @[@0x1, @0xd, @0x2, @0x0], // THGR122NX
+              @[@0xf, @0x8, @0xb, @0x4], // THGR810
+              @[@0xf, @0x8, @0x2, @0x4]]; // THGN801
 
 }
 
